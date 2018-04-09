@@ -4,7 +4,7 @@
 #
 Name     : R-checkmate
 Version  : 1.8.5
-Release  : 2
+Release  : 3
 URL      : https://cran.r-project.org/src/contrib/checkmate_1.8.5.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/checkmate_1.8.5.tar.gz
 Summary  : Fast and Versatile Argument Checks
@@ -15,10 +15,12 @@ Requires: R-backports
 Requires: R-evaluate
 Requires: R-fastmatch
 Requires: R-markdown
+Requires: R-stringi
 BuildRequires : R-backports
 BuildRequires : R-evaluate
 BuildRequires : R-fastmatch
 BuildRequires : R-markdown
+BuildRequires : R-stringi
 BuildRequires : clr-R-helpers
 
 %description
@@ -41,11 +43,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1521169017
+export SOURCE_DATE_EPOCH=1523293856
 
 %install
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1521169017
+export SOURCE_DATE_EPOCH=1523293856
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
