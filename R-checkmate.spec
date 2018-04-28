@@ -4,7 +4,7 @@
 #
 Name     : R-checkmate
 Version  : 1.8.5
-Release  : 6
+Release  : 7
 URL      : https://cran.r-project.org/src/contrib/checkmate_1.8.5.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/checkmate_1.8.5.tar.gz
 Summary  : Fast and Versatile Argument Checks
