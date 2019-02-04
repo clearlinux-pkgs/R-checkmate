@@ -4,16 +4,13 @@
 #
 Name     : R-checkmate
 Version  : 1.9.1
-Release  : 13
+Release  : 14
 URL      : https://cran.r-project.org/src/contrib/checkmate_1.9.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/checkmate_1.9.1.tar.gz
 Summary  : Fast and Versatile Argument Checks
 Group    : Development/Tools
 License  : BSD-3-Clause
 Requires: R-checkmate-lib = %{version}-%{release}
-Requires: R-backports
-Requires: R-fastmatch
-Requires: R-rlang
 BuildRequires : R-backports
 BuildRequires : R-fastmatch
 BuildRequires : R-rlang
@@ -43,10 +40,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1549254019
+export SOURCE_DATE_EPOCH=1549270876
 
 %install
-export SOURCE_DATE_EPOCH=1549254019
+export SOURCE_DATE_EPOCH=1549270876
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
