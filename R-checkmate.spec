@@ -4,15 +4,17 @@
 #
 Name     : R-checkmate
 Version  : 1.9.1
-Release  : 15
+Release  : 16
 URL      : https://cran.r-project.org/src/contrib/checkmate_1.9.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/checkmate_1.9.1.tar.gz
 Summary  : Fast and Versatile Argument Checks
 Group    : Development/Tools
 License  : BSD-3-Clause
 Requires: R-checkmate-lib = %{version}-%{release}
+Requires: R-markdown
 BuildRequires : R-backports
 BuildRequires : R-fastmatch
+BuildRequires : R-markdown
 BuildRequires : R-rlang
 BuildRequires : buildreq-R
 
@@ -40,10 +42,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1549270876
+export SOURCE_DATE_EPOCH=1552726881
 
 %install
-export SOURCE_DATE_EPOCH=1549270876
+export SOURCE_DATE_EPOCH=1552726881
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -79,8 +81,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library checkmate|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  checkmate || :
 
 
 %files
@@ -114,10 +115,70 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/checkmate/html/R.css
 /usr/lib64/R/library/checkmate/include/checkmate.h
 /usr/lib64/R/library/checkmate/include/checkmate_stub.c
-/usr/lib64/R/library/checkmate/libs/symbols.rds
+/usr/lib64/R/library/checkmate/tests/test-all.R
+/usr/lib64/R/library/checkmate/tests/testthat/helper.R
+/usr/lib64/R/library/checkmate/tests/testthat/test_AssertCollection.R
+/usr/lib64/R/library/checkmate/tests/testthat/test_altreps.R
+/usr/lib64/R/library/checkmate/tests/testthat/test_anyInfinite.R
+/usr/lib64/R/library/checkmate/tests/testthat/test_anyMissing.R
+/usr/lib64/R/library/checkmate/tests/testthat/test_anyNaN.R
+/usr/lib64/R/library/checkmate/tests/testthat/test_asType.R
+/usr/lib64/R/library/checkmate/tests/testthat/test_assert.R
+/usr/lib64/R/library/checkmate/tests/testthat/test_bit.R
+/usr/lib64/R/library/checkmate/tests/testthat/test_checkArray.R
+/usr/lib64/R/library/checkmate/tests/testthat/test_checkAtomic.R
+/usr/lib64/R/library/checkmate/tests/testthat/test_checkAtomicVector.R
+/usr/lib64/R/library/checkmate/tests/testthat/test_checkCharacter.R
+/usr/lib64/R/library/checkmate/tests/testthat/test_checkChoice.R
+/usr/lib64/R/library/checkmate/tests/testthat/test_checkClass.R
+/usr/lib64/R/library/checkmate/tests/testthat/test_checkComplex.R
+/usr/lib64/R/library/checkmate/tests/testthat/test_checkCount.R
+/usr/lib64/R/library/checkmate/tests/testthat/test_checkDataFrame.R
+/usr/lib64/R/library/checkmate/tests/testthat/test_checkDataTable.R
+/usr/lib64/R/library/checkmate/tests/testthat/test_checkDate.R
+/usr/lib64/R/library/checkmate/tests/testthat/test_checkDisjunct.R
+/usr/lib64/R/library/checkmate/tests/testthat/test_checkDouble.R
+/usr/lib64/R/library/checkmate/tests/testthat/test_checkEnvironment.R
+/usr/lib64/R/library/checkmate/tests/testthat/test_checkFALSE.R
+/usr/lib64/R/library/checkmate/tests/testthat/test_checkFactor.R
+/usr/lib64/R/library/checkmate/tests/testthat/test_checkFilesystem.R
+/usr/lib64/R/library/checkmate/tests/testthat/test_checkFlag.R
+/usr/lib64/R/library/checkmate/tests/testthat/test_checkFormula.R
+/usr/lib64/R/library/checkmate/tests/testthat/test_checkFunction.R
+/usr/lib64/R/library/checkmate/tests/testthat/test_checkInt.R
+/usr/lib64/R/library/checkmate/tests/testthat/test_checkInteger.R
+/usr/lib64/R/library/checkmate/tests/testthat/test_checkIntegerish.R
+/usr/lib64/R/library/checkmate/tests/testthat/test_checkList.R
+/usr/lib64/R/library/checkmate/tests/testthat/test_checkLogical.R
+/usr/lib64/R/library/checkmate/tests/testthat/test_checkMatrix.R
+/usr/lib64/R/library/checkmate/tests/testthat/test_checkMultiClass.R
+/usr/lib64/R/library/checkmate/tests/testthat/test_checkNames.R
+/usr/lib64/R/library/checkmate/tests/testthat/test_checkNull.R
+/usr/lib64/R/library/checkmate/tests/testthat/test_checkNumber.R
+/usr/lib64/R/library/checkmate/tests/testthat/test_checkNumeric.R
+/usr/lib64/R/library/checkmate/tests/testthat/test_checkOS.R
+/usr/lib64/R/library/checkmate/tests/testthat/test_checkPOSIXct.R
+/usr/lib64/R/library/checkmate/tests/testthat/test_checkR6.R
+/usr/lib64/R/library/checkmate/tests/testthat/test_checkRaw.R
+/usr/lib64/R/library/checkmate/tests/testthat/test_checkScalar.R
+/usr/lib64/R/library/checkmate/tests/testthat/test_checkScalarNA.R
+/usr/lib64/R/library/checkmate/tests/testthat/test_checkSetEqual.R
+/usr/lib64/R/library/checkmate/tests/testthat/test_checkString.R
+/usr/lib64/R/library/checkmate/tests/testthat/test_checkSubset.R
+/usr/lib64/R/library/checkmate/tests/testthat/test_checkTRUE.R
+/usr/lib64/R/library/checkmate/tests/testthat/test_checkTibble.R
+/usr/lib64/R/library/checkmate/tests/testthat/test_checkVector.R
+/usr/lib64/R/library/checkmate/tests/testthat/test_deparse.R
+/usr/lib64/R/library/checkmate/tests/testthat/test_guessType.R
+/usr/lib64/R/library/checkmate/tests/testthat/test_include.R
+/usr/lib64/R/library/checkmate/tests/testthat/test_interoperability.R
+/usr/lib64/R/library/checkmate/tests/testthat/test_makeFunction.R
+/usr/lib64/R/library/checkmate/tests/testthat/test_matchArg.R
+/usr/lib64/R/library/checkmate/tests/testthat/test_messages.R
+/usr/lib64/R/library/checkmate/tests/testthat/test_qassert.R
+/usr/lib64/R/library/checkmate/tests/testthat/test_qassertr.R
+/usr/lib64/R/library/checkmate/tests/testthat/test_wf.R
 
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/R/library/checkmate/libs/checkmate.so
-/usr/lib64/R/library/checkmate/libs/checkmate.so.avx2
-/usr/lib64/R/library/checkmate/libs/checkmate.so.avx512
