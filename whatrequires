@@ -1,7 +1,12 @@
 # This file contains recursive sources that require this package
 R-BBmisc
+R-BatchJobs
+R-Hmisc
+R-RcmdrMisc
 R-fail
+R-haplo.stats
 R-htmlTable
 R-loo
 R-pxweb
 R-rjstat
+R-rms
