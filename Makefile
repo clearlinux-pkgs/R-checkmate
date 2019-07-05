@@ -1,5 +1,5 @@
 PKG_NAME := R-checkmate
-URL = https://cran.r-project.org/src/contrib/checkmate_1.9.3.tar.gz
+URL = https://cran.r-project.org/src/contrib/checkmate_1.9.4.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
