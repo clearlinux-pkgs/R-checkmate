@@ -4,7 +4,7 @@
 #
 Name     : R-checkmate
 Version  : 2.0.0
-Release  : 29
+Release  : 30
 URL      : https://cran.r-project.org/src/contrib/checkmate_2.0.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/checkmate_2.0.0.tar.gz
 Summary  : Fast and Versatile Argument Checks
@@ -12,19 +12,12 @@ Group    : Development/Tools
 License  : BSD-3-Clause
 Requires: R-checkmate-lib = %{version}-%{release}
 Requires: R-backports
-Requires: R-fastmatch
-Requires: R-tinytest
 BuildRequires : R-backports
-BuildRequires : R-fastmatch
-BuildRequires : R-tinytest
 BuildRequires : buildreq-R
 
 %description
-# checkmate
-[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/checkmate)](https://cran.r-project.org/package=checkmate)
-[![R build status](https://github.com/mllg/checkmate/workflows/R-CMD-check/badge.svg)](https://github.com/mllg/checkmate)
-[![Coverage Status](https://img.shields.io/coveralls/mllg/checkmate.svg)](https://coveralls.io/r/mllg/checkmate?branch=master)
-[![Download Stats](https://cranlogs.r-pkg.org/badges/checkmate)](https://cran.r-project.org/package=checkmate)
+substantial part of the package was written in C to minimize any worries
+    about execution time overhead.
 
 %package lib
 Summary: lib components for the R-checkmate package.
@@ -36,21 +29,22 @@ lib components for the R-checkmate package.
 
 %prep
 %setup -q -c -n checkmate
+cd %{_builddir}/checkmate
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1581051026
+export SOURCE_DATE_EPOCH=1589567321
 
 %install
-export SOURCE_DATE_EPOCH=1581051026
+export SOURCE_DATE_EPOCH=1589567321
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
