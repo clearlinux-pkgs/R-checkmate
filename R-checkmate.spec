@@ -4,7 +4,7 @@
 #
 Name     : R-checkmate
 Version  : 2.0.0
-Release  : 38
+Release  : 39
 URL      : https://cran.r-project.org/src/contrib/checkmate_2.0.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/checkmate_2.0.0.tar.gz
 Summary  : Fast and Versatile Argument Checks
@@ -12,7 +12,9 @@ Group    : Development/Tools
 License  : BSD-3-Clause
 Requires: R-checkmate-lib = %{version}-%{release}
 Requires: R-backports
+Requires: R-data.table
 BuildRequires : R-backports
+BuildRequires : R-data.table
 BuildRequires : buildreq-R
 
 %description
@@ -36,10 +38,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1589567321
+export SOURCE_DATE_EPOCH=1626909818
 
 %install
-export SOURCE_DATE_EPOCH=1589567321
+export SOURCE_DATE_EPOCH=1626909818
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -180,3 +182,5 @@ R CMD check --no-manual --no-examples --no-codoc checkmate || :
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/R/library/checkmate/libs/checkmate.so
+/usr/lib64/R/library/checkmate/libs/checkmate.so.avx2
+/usr/lib64/R/library/checkmate/libs/checkmate.so.avx512
