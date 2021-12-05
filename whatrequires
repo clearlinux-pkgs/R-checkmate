@@ -1,8 +1,14 @@
 # This file contains recursive sources that require this package
 R-BBmisc
 R-BatchJobs
+R-ParamHelpers
+R-base64url
+R-batchtools
 R-fail
 R-htmlTable
 R-loo
+R-mlr
+R-parallelMap
+R-posterior
 R-pxweb
 R-rjstat
