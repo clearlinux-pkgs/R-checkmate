@@ -4,7 +4,7 @@
 #
 Name     : R-checkmate
 Version  : 2.0.0
-Release  : 43
+Release  : 44
 URL      : https://cran.r-project.org/src/contrib/checkmate_2.0.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/checkmate_2.0.0.tar.gz
 Summary  : Fast and Versatile Argument Checks
@@ -37,10 +37,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1640906881
+export SOURCE_DATE_EPOCH=1640988264
 
 %install
-export SOURCE_DATE_EPOCH=1640906881
+export SOURCE_DATE_EPOCH=1640988264
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
