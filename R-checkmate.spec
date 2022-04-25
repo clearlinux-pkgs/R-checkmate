@@ -4,7 +4,7 @@
 #
 Name     : R-checkmate
 Version  : 2.1.0
-Release  : 46
+Release  : 47
 URL      : https://cran.r-project.org/src/contrib/checkmate_2.1.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/checkmate_2.1.0.tar.gz
 Summary  : Fast and Versatile Argument Checks
